@@ -1,7 +1,7 @@
 django-devdeploy
 =======================
 
-Do not use: this stuff is heavily in development
+Do not use: this stuff is heavily in development an completely not ready.
 
 Info
 -----
@@ -28,7 +28,25 @@ and then use it (in bash):
 Now install cookiecutter (https://github.com/audreyr/cookiecutter):
 
     (base)$ pip install cookiecutter
+
+Then run it on this repo and answer to its questions:
+
     (base)$ cookiecutter https://github.com/mariosgn/django-devdeploy.git
+    Cloning into 'django-devdeploy'...
+    remote: Counting objects: 48, done.
+    remote: Compressing objects: 100% (41/41), done.
+    remote: Total 48 (delta 12), reused 31 (delta 2)
+    Unpacking objects: 100% (48/48), done.
+    Checking connectivity... fatto.
+    project_name (default is "project_name")? mydjangoapp
+    author_name (default is "Your Name")? Mario Signorino
+    email (default is "Your email")? mario.signorino@mydjango.app           
+    domain_name (default is "example.com")? www.mydjango.app
+    root_dir (default is "webapps")?      
+    (base)$
+    
+Now you should have a new django app in a directory called *webapps*.
+
 
 Sources
 -----
