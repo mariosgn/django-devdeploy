@@ -3,12 +3,30 @@ django-devdeploy
 
 Do not use: this stuff is heavily in development
 
+Info
+-----
+I do not use virtualenvwrapper: it's already too easy to manage virtualenvs... there's not need to another layer.
+
+
 Setup
 -----
- $ virtualenv base
- $ source base/bin/activate
- (base)$ pip install cookiecutter
- (base)$ cookiecutter https://github.com/mariosgn/django-devdeploy
+Install _virtualenv:
+.. _virtualenv: https://virtualenv.pypa.io/en/latest/
+
+    $ pip install virtualenv
+    or
+    $ sudo apt-get install virtualenv
+
+Use it:
+
+    $ virtualenv base
+    $ source base/bin/activate
+    
+Install _cookiecutter:
+.. _virtualenv: https://github.com/audreyr/cookiecutter
+
+    (base)$ pip install cookiecutter
+    (base)$ cookiecutter https://github.com/mariosgn/django-devdeploy.git
  
 
 Sources
