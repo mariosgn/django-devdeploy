@@ -1,7 +1,7 @@
 django-devdeploy
 =======================
 
-Do not use: this stuff is development
+Do not use: this stuff is heavily in development
 
 Setup
 -----
