@@ -1,0 +1,9 @@
+Django
+django-crispy-forms
+django-bootstrap-form
+django-forms-bootstrap
+django-compressor
+celery
+django-celery
+django-user-accounts
+python-dateutil
