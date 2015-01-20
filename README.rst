@@ -11,21 +11,27 @@ I do not use virtualenvwrapper: it's already too easy to manage virtualenvs... t
 Setup
 -----
 Install virtualenv_:
-.. _virtualenv: https://virtualenv.pypa.io/en/latest/
 
     $ pip install virtualenv
+
     or
+
     $ sudo apt-get install virtualenv
+
+.. _virtualenv: https://virtualenv.pypa.io/en/latest/
+
 
 Use it:
 
     $ virtualenv base
+
     $ source base/bin/activate
     
 Install cookiecutter_:
-.. _virtualenv: https://github.com/audreyr/cookiecutter
+.. _cookiecutter: https://github.com/audreyr/cookiecutter
 
     (base)$ pip install cookiecutter
+    
     (base)$ cookiecutter https://github.com/mariosgn/django-devdeploy.git
  
 
