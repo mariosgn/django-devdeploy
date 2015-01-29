@@ -135,7 +135,6 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.tz',
     'django.contrib.messages.context_processors.messages',
     'django.core.context_processors.request',
-    'account.context_processors.account',
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-loaders
@@ -164,11 +163,6 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-
-    #'account.middleware.LocaleMiddleware',
-    #'account.middleware.TimezoneMiddleware',
-
-    'valoreformazione.libs.vfcore.middleware.LoginRequiredMiddleware',
 )
 ########## END MIDDLEWARE CONFIGURATION
 
