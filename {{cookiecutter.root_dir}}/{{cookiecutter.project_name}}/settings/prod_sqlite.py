@@ -33,6 +33,11 @@ SERVER_EMAIL = EMAIL_HOST_USER
 
 ########## CACHE CONFIGURATION
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#caches
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+    }
+}
 ########## END CACHE CONFIGURATION
 
 
@@ -62,9 +67,8 @@ SECRET_KEY = environ.get('SECRET_KEY', SECRET_KEY)
 
 
 ########## ALLOWED HOSTS CONFIGURATION
-# See: https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
-LOCAL_HOSTNAME = environ.get('LOCAL_HOSTNAME', SECRET_KEY)
-ALLOWED_HOSTS = [LOCAL_HOSTNAME,'{{cookiecutter.domain_name}}']
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts 
+ALLOWED_HOSTS = '{{cookiecutter.domain_name}}'
 ########## END ALLOWED HOST CONFIGURATION
  
 
