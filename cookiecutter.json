@@ -5,6 +5,7 @@
     "domain_name": "bugs.gnufish.net",
     "root_dir": "bugs.gnufish.net",
     "deploy_fullpath_dir": "/var/www",
-    "webuser": "webuser",
-    "gunicorn_port": "8000"
+    "gunicorn_port": "8000",
+    "webuser": "dodiesis",
+    "group": "dodiesis"
 }
