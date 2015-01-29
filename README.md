@@ -25,8 +25,11 @@ and then use it (in bash):
     $ source /tmp/base/bin/activate
     (base)$
 
-Now install cookiecutter (https://github.com/audreyr/cookiecutter):
+Now install cookiecutter (https://github.com/audreyr/cookiecutter).
 
+You may need python-dev:
+    
+    (base)$ apt-get install python-dev
     (base)$ pip install cookiecutter
 
 Then run it on this repo and answer to its questions:
