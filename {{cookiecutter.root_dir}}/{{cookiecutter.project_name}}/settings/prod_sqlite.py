@@ -15,7 +15,7 @@ EMAIL_HOST = environ.get('EMAIL_HOST', 'localhost')
 #EMAIL_HOST_PASSWORD = environ.get('EMAIL_HOST_PASSWORD', '')
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#email-host-user
-EMAIL_HOST_USER = environ.get('EMAIL_HOST_USER', 'noreply@gnufish.net')
+EMAIL_HOST_USER = environ.get('EMAIL_HOST_USER', '{{cookiecutter.email}}')
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#email-port
 #EMAIL_PORT = environ.get('EMAIL_PORT', 587)
@@ -64,7 +64,7 @@ SECRET_KEY = environ.get('SECRET_KEY', SECRET_KEY)
 ########## ALLOWED HOSTS CONFIGURATION
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
 LOCAL_HOSTNAME = environ.get('LOCAL_HOSTNAME', SECRET_KEY)
-ALLOWED_HOSTS = [LOCAL_HOSTNAME,'vf.gnufish.net']
+ALLOWED_HOSTS = [LOCAL_HOSTNAME,'{{cookiecutter.domain_name}}']
 ########## END ALLOWED HOST CONFIGURATION
  
 
@@ -73,7 +73,7 @@ ALLOWED_HOSTS = [LOCAL_HOSTNAME,'vf.gnufish.net']
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': normpath(join(DJANGO_ROOT, 'dev.db')),
+        'NAME': normpath(join(DJANGO_ROOT, 'database_sqlite3.db')),
         'USER': '',
         'PASSWORD': '',
         'HOST': '',

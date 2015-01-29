@@ -25,7 +25,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': normpath(join(DJANGO_ROOT, 'dev.db')),
+        'NAME': normpath(join(DJANGO_ROOT, 'database_sqlite3.db')),
         'USER': '',
         'PASSWORD': '',
         'HOST': '',
@@ -40,8 +40,6 @@ DATABASES = {
 CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
-        #'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
-        #'LOCATION': '127.0.0.1:11212',
     }
 }
 ########## END CACHE CONFIGURATION
@@ -72,10 +70,8 @@ MIDDLEWARE_CLASSES += (
 
 DEBUG_TOOLBAR_CONFIG = {
 #    'INTERCEPT_REDIRECTS': False,
-    'JQUERY_URL' : "/static/js/django-toolbar-jquery.min.js"
+#    'JQUERY_URL' : "/static/js/django-toolbar-jquery.min.js"
 }
-
-#messo a falso per minibug
 DEBUG_TOOLBAR_PATCH_SETTINGS = True
 
 ########## END TOOLBAR CONFIGURATION

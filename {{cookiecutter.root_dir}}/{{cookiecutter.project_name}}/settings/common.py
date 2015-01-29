@@ -7,19 +7,12 @@ from sys import path
 
 from djcelery import setup_loader
 
+#TODO drop these
 DEBUG_TOOLBAR_PATCH_SETTINGS = False
 TEST_RUNNER = "django.test.simple.DjangoTestSuiteRunner"
-
 ACCOUNT_OPEN_SIGNUP=False
 CRISPY_TEMPLATE_PACK = 'bootstrap'
 
-LOGIN_EXEMPT_URLS = (
- r'^admin',
- r'^siteinit',
- r'^backend/azi/chooser$',
- r'^backend/azi', # allow any URL under /legal/*
-
-)
 
 
 ########## PATH CONFIGURATION
@@ -50,7 +43,7 @@ TEMPLATE_DEBUG = DEBUG
 ########## MANAGER CONFIGURATION
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#admins
 ADMINS = (
-    ('Mario Signorino', 'mario.signorino@gnufish.net'),
+    ('{{cookiecutter.author_name}}', '{{cookiecutter.email}}'),
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#managers
@@ -78,11 +71,10 @@ USE_L10N = True
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#use-tz
 USE_TZ = True
 
-DEFAULT_FROM_EMAIL = "support@floodream.com"
+DEFAULT_FROM_EMAIL = "{{cookiecutter.email}}"
 
 LOCALE_PATHS = (
-    normpath(join(DJANGO_ROOT, '../locale')),
-    #"/home/dodiesis/Desktop/Dropbox/Lavoro/Munari/valorform_git/locale",
+    normpath(join(DJANGO_ROOT, '../locale')), 
 )
 
 ########## END GENERAL CONFIGURATION
@@ -90,8 +82,7 @@ LOCALE_PATHS = (
 
 ########## MEDIA CONFIGURATION
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#media-root
-#MEDIA_ROOT = normpath(join(DJANGO_ROOT, '../media'))
-MEDIA_ROOT = '/home/mario/Dropbox/Lavoro/Munari/valorform_git/media'
+MEDIA_ROOT = normpath(join(DJANGO_ROOT, '../media'))
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#media-url
 MEDIA_URL = '/media/'
@@ -207,30 +198,16 @@ DJANGO_APPS = (
 )
 
 THIRD_PARTY_APPS = (
-    # Database migration helpers:
-    #'south',
-
     # Static file management:
     'compressor',
 
     # Asynchronous task queue:
     #'djcelery',
-
-    'account',
-    'bootstrapform',
-    #'crispy_forms',
-    #'rosetta',
-    'datetimewidget',
-
 )
 
 LOCAL_APPS = (
-    'valoreformazione.apps.datatableview',
-    'valoreformazione.apps.vftest',
-    'valoreformazione.apps.vfbackend',
-    'valoreformazione.libs.vfcore',
-    'valoreformazione.apps.vfaccount',
-    'valoreformazione.libs.minibugs',
+    #'{{cookiecutter.project_name}}.apps.add_your_apps_here',
+    #'{{cookiecutter.project_name}}.libs.add_your_libs_here',
 )
 
 
