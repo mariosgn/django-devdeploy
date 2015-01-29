@@ -15,7 +15,7 @@ EMAIL_HOST = environ.get('EMAIL_HOST', 'localhost')
 #EMAIL_HOST_PASSWORD = environ.get('EMAIL_HOST_PASSWORD', '')
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#email-host-user
-EMAIL_HOST_USER = environ.get('EMAIL_HOST_USER', 'noreply@floodream.com')
+EMAIL_HOST_USER = environ.get('EMAIL_HOST_USER', '{{cookiecutter.email}}')
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#email-port
 #EMAIL_PORT = environ.get('EMAIL_PORT', 587)
