@@ -1,8 +1,10 @@
 {
-    "project_name": "project_name",
-    "author_name": "Your Name",
-    "email": "Your email",
-    "domain_name": "example.com",
-    "root_dir": "webapps"
-    "webuser": "webuser"
+    "project_name": "minibugsproj",
+    "author_name": "mario.signorino",
+    "email": "mario.signorino@gnufish.net",
+    "domain_name": "bugs.gnufish.net",
+    "root_dir": "bugs.gnufish.net",
+    "deploy_fullpath_dir": "/var/www",
+    "webuser": "webuser",
+    "gunicorn_port": "8000"
 }
