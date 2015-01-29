@@ -17,12 +17,12 @@ Install virtualenv (https://virtualenv.pypa.io/en/latest/) :
 
 and then use it (in bash):
 
-    $ virtualenv base
+    $ virtualenv /tmp/base
     Running virtualenv with interpreter /usr/bin/python2
     New python executable in base/bin/python2
     Also creating executable in base/bin/python
     Installing setuptools, pip...done.
-    $ source base/bin/activate
+    $ source /tmp/base/bin/activate
     (base)$
 
 Now install cookiecutter (https://github.com/audreyr/cookiecutter):
