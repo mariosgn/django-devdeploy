@@ -4,4 +4,3 @@ src/*
 static/*
 *.pyc
 pvenv/*
-djangoprj/
