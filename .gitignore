@@ -1,8 +1,6 @@
 run/*
 logs/*
-media/*
 src/*
 static/*
 *.pyc
 pvenv/*
-djangoprj/
