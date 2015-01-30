@@ -21,12 +21,13 @@ test -d $LOGDIR || mkdir -p $LOGDIR
  
 # Start your Django Unicorn
 # Programs meant to be run under supervisor should not daemonize themselves (do not use --daemon)
-exec ../bin/gunicorn \
+exec {{cookiecutter.deploy_fullpath_dir}}/{{cookiecutter.domain_name}}/venv/bin/gunicorn \
   --name $NAME \
   --workers $NUM_WORKERS \
   --bind=127.0.0.1:{{cookiecutter.gunicorn_port}} \
   --log-level=debug \
   --pythonpath=minibugsproj \
+  --log-file={{cookiecutter.deploy_fullpath_dir}}/{{cookiecutter.domain_name}}/log/gunicorn.log \
   wsgi:application
 #    --log-file=- \  
 #  --user=$USER --group=$GROUP \
