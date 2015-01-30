@@ -200,7 +200,7 @@ THIRD_PARTY_APPS = (
 )
 
 LOCAL_APPS = (
-    #'{{cookiecutter.project_name}}.apps.add_your_apps_here',
+    '{{cookiecutter.project_name}}.apps.sample_{{cookiecutter.project_name}}',
     #'{{cookiecutter.project_name}}.libs.add_your_libs_here',
 )
 
