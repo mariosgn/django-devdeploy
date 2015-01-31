@@ -51,6 +51,10 @@ Then run it on this repo and answer to its questions:
 Now you should have a new django app in a directory called *webapps*.
 
 
+pip install -r bugs.gnufish.net/requirements/dev_host.txt
+./manage syncdb
+
+
 Sources
 -----
 https://github.com/pydanny/cookiecutter-django

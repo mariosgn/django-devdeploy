@@ -4,3 +4,5 @@ src/*
 static/*
 *.pyc
 pvenv/*
+*.db
+.idea/*

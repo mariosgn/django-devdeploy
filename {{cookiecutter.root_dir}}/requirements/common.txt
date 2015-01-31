@@ -1,9 +1,4 @@
-Django
-django-crispy-forms
-django-bootstrap-form
-django-forms-bootstrap
-django-compressor
-celery
+Django==1.7.2
+django-bootstrap-form==3.1
+django-compressor==1.4
 django-celery
-django-user-accounts
-python-dateutil
