@@ -8,10 +8,7 @@ VIRTUALENV_NAME=$PROJECT_NAME
 
 PROJECT_DIR=/home/vagrant/$PROJECT_NAME
 VIRTUALENV_DIR=/home/vagrant/virtualenv/$PROJECT_NAME
-LOCAL_SETTINGS_PATH="/$PROJECT_NAME/settings/local.py"
-
-PGSQL_VERSION=9.3
-
+  
 # Python dev packages
 apt-get install -y build-essential python python-dev
 
@@ -26,5 +23,10 @@ apt-get install -y git
 su - vagrant -c "virtualenv $VIRTUALENV_DIR" 
 su - vagrant -c "source $VIRTUALENV_DIR/bin/activate && pip install -r $PROJECT_DIR/requirements/dev_vagrant.txt"  
 
+echo "export DJANGO_SETTINGS_MODULE='$PROJECT_NAME.settings.dev_postgres'" >> /home/vagrant/.bashrc
+
 # Django project setup
-su - vagrant -c "source $VIRTUALENV_DIR/bin/activate && cd $PROJECT_DIR && ./manage.py syncdb --noinput && ./manage.py migrate"
+su - vagrant -c "source $VIRTUALENV_DIR/bin/activate && cd $PROJECT_DIR &&  DJANGO_SETTINGS_MODULE='$PROJECT_NAME.settings.dev_postgres' ./manage.py syncdb --noinput && DJANGO_SETTINGS_MODULE='$PROJECT_NAME.settings.dev_postgres' ./manage.py migrate"
+
+su - vagrant -c "chmod +x $PROJECT_DIR/vagrant/run_django_server.sh"
+su - vagrant -c "sudo ln -s $PROJECT_DIR/vagrant/run_django_server.sh /usr/bin/run_django_server"
