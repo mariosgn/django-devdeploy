@@ -4,7 +4,7 @@ import sys
 import pkgutil
 
 if __name__ == "__main__":
-     if not "DJANGO_SETTINGS_MODULE" in os.environ:
+    if not "DJANGO_SETTINGS_MODULE" in os.environ:
         print "DJANGO_SETTINGS_MODULE is not set:"
         print "Please select one:"
         

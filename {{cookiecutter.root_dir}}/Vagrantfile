@@ -19,5 +19,5 @@ Vagrant::Config.run do |config|
 	config.vm.share_folder "project", "/home/vagrant/{{cookiecutter.project_name}}", "."
 	
 	# Enable provisioning with a shell script.
-	config.vm.provision :shell, :path => "vagrant/install.sh", :args => "{{cookiecutter.project_name}}"
+	config.vm.provision :shell, :path => "vagrant/bootstrap.sh", :args => "{{cookiecutter.project_name}}"
 end

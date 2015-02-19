@@ -26,7 +26,7 @@ exec {{cookiecutter.deploy_fullpath_dir}}/{{cookiecutter.domain_name}}/venv/bin/
   --workers $NUM_WORKERS \
   --bind=127.0.0.1:{{cookiecutter.gunicorn_port}} \
   --log-level=debug \
-  --pythonpath=minibugsproj \
+  --pythonpath={{cookiecutter.project_name}} \
   --log-file={{cookiecutter.deploy_fullpath_dir}}/{{cookiecutter.domain_name}}/log/gunicorn.log \
   wsgi:application
 #    --log-file=- \  

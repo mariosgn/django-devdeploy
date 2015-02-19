@@ -1,9 +1,9 @@
 {
-    "project_name": "minibugsproj",
+    "project_name": "lostpet",
     "author_name": "mario.signorino",
     "email": "mario.signorino@gnufish.net",
-    "domain_name": "bugs.gnufish.net",
-    "root_dir": "bugs.gnufish.net",
+    "domain_name": "lostpet.gnufish.net",
+    "root_dir": "lostpet.gnufish.net",
     "deploy_fullpath_dir": "/var/www",
     "gunicorn_port": "8000",
     "webuser": "dodiesis",
