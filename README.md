@@ -15,26 +15,26 @@ Install virtualenv (https://virtualenv.pypa.io/en/latest/) :
     $ pip install virtualenv
     $ sudo apt-get install virtualenv
 
-and then use it (in bash):
+and then use it:
 
-    $ virtualenv /tmp/base
+    $ virtualenv virtenv
     Running virtualenv with interpreter /usr/bin/python2
     New python executable in base/bin/python2
     Also creating executable in base/bin/python
     Installing setuptools, pip...done.
-    $ source /tmp/base/bin/activate
-    (base)$
+    $ source virtenv/bin/activate
+    (virtenv)$
 
 Now install cookiecutter (https://github.com/audreyr/cookiecutter).
 
 You may need python-dev:
     
-    (base)$ apt-get install python-dev
-    (base)$ pip install cookiecutter
+    (virtenv)$ apt-get install python-dev
+    (virtenv)$ pip install cookiecutter
 
 Then run it on this repo and answer to its questions:
 
-    (base)$ cookiecutter https://github.com/mariosgn/django-devdeploy.git
+    (virtenv)$ cookiecutter https://github.com/mariosgn/django-devdeploy.git
     Cloning into 'django-devdeploy'...
     remote: Counting objects: 48, done.
     remote: Compressing objects: 100% (41/41), done.
@@ -46,13 +46,31 @@ Then run it on this repo and answer to its questions:
     email (default is "Your email")? mario.signorino@mydjango.app           
     domain_name (default is "example.com")? www.mydjango.app
     root_dir (default is "webapps")?      
-    (base)$
+    (virtenv)$
     
-Now you should have a new django app in a directory called *webapps*.
+Now you should have a new django app in a directory called *webapps*. Go into it:
 
+    cd mydjangoapp
+    
+Install the needed python packages    
 
-pip install -r bugs.gnufish.net/requirements/dev_host.txt
-./manage syncdb
+    (virtenv)$ pip install -r requirements/dev_host.txt
+    (virtenv)$ ./manage.py syncdb
+    DJANGO_SETTINGS_MODULE is not set:
+    Please select one:
+       0: common
+       1: dev
+       2: dev_postgres
+       3: prod
+       4: quick_prod
+    Please select the desired configuration (default: 0): 1
+    
+    Run the followind line in your shell to avoid this question.
+    export DJANGO_SETTINGS_MODULE='mydjangoapp.settings.dev'
+    [....]
+    (virtenv)$ export DJANGO_SETTINGS_MODULE='mydjangoapp.settings.dev'
+    (virtenv)$ ./manage.py runserver
+
 
 
 Sources
