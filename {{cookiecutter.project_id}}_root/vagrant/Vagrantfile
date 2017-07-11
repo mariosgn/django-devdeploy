@@ -1,0 +1,23 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant::Config.run do |config|
+	# Base box to build off, and download URL for when it doesn't exist on the user's system already
+    config.vm.box = "ubuntu/xenial64"
+    
+    # Forward a port from the guest to the host, which allows for outside
+	# computers to access the VM, whereas host only networking does not.
+	# config.vm.network "forwarded_port", guest: 8000, host: 8080
+    # config.vm.network "forwarded_port", guest: 9000, host: 9090, protocol: "udp"
+	
+	# PostgreSQL Server port forwarding
+    # config.vm.forward_port 5432, 15432
+	
+	# Share an additional folder to the guest VM. The first argument is
+	# an identifier, the second is the path on the guest to mount the
+	# folder, and the third is the path on the host to the actual folder.
+    config.vm.synced_folder ".", "/home/vagrant/{{cookiecutter.project_id}}"
+	
+	# Enable provisioning with a shell script.
+	config.vm.provision :shell, :path => "vagrant/bootstrap.sh", :args => "{{cookiecutter.project_id}}"
+end
