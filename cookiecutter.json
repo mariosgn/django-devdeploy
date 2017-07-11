@@ -1,11 +1,9 @@
 {
-    "project_name": "lostpet",
+    "project_name": "MP Backend",
+    "project_id": "{{ cookiecutter.project_name.lower()|replace(' ', '_')|replace('-', '_') }}",
+    "description": "A short description of the project.",
     "author_name": "mario.signorino",
-    "email": "mario.signorino@gnufish.net",
-    "domain_name": "lostpet.gnufish.net",
-    "root_dir": "lostpet.gnufish.net",
-    "deploy_fullpath_dir": "/var/www",
-    "gunicorn_port": "8000",
-    "webuser": "dodiesis",
-    "group": "dodiesis"
+    "email": "mario.signorino@bluenso.io",
+    "version": "0.1",
+    "timezone": "UTC"
 }
